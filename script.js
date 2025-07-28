@@ -247,6 +247,8 @@ const svg = d3.select("#chart-revenue") // or "#chart-revenue"
   svg.selectAll(".domain").attr("stroke", "none");
   svg.selectAll(".tick line").attr("stroke", "none");
 }
+
+
 d3.csv("data/imdb_posters.csv").then(data => {
   drawTimeline(data);
   drawRevenueChart(data);
