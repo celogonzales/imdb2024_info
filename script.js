@@ -26,11 +26,11 @@ function drawTimeline(data) {
   const height = 300;
   const margin = { top: 20, right: 20, bottom: 40, left: 40 };
 
-  const svg = d3
-    .select("#chart-timeline")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+const svg = d3.select("#chart-timeline") // or "#chart-revenue"
+  .append("svg")
+  .attr("viewBox", `0 0 ${width} ${height}`)
+  .attr("preserveAspectRatio", "xMidYMid meet")
+  .classed("responsive-svg", true);
 
   const x = d3.scaleTime()
     .domain(d3.extent(stackedData, d => d.week))
@@ -160,11 +160,12 @@ function drawRevenueChart(data) {
   const height = 300;
   const margin = { top: 20, right: 20, bottom: 40, left: 40 };
 
-  const svg = d3
-    .select("#chart-revenue")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
+const svg = d3.select("#chart-revenue") // or "#chart-revenue"
+  .append("svg")
+  .attr("viewBox", `0 0 ${width} ${height}`)
+  .attr("preserveAspectRatio", "xMidYMid meet")
+  .classed("responsive-svg", true);
+
 
   const x = d3.scaleTime()
     .domain(d3.extent(stackedData, d => d.week))
