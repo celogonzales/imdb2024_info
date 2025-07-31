@@ -2,54 +2,121 @@
 <html lang="en">
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2024 IMDb Movie Reviews</title>
+    <title>From Ratings to Revenue: 2024 in Movies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <main>
 
-        <div class="centered-paragraph">
-            <h1>2024 IMDb Movie Reviews</h1>
-            <p>A data story exploring how movies were rated on IMDb.</p>
-        </div>
+        <!-- intro -->
+        <section class="centered-paragraph">
+            <h1>From Ratings to Revenue: 2024 in Movies</h1>
+            <p>Do better movies generate more money?</p>
+            <p>
+                Every year, hundreds of films are released. Some are box office giants, while others barely earn any
+                money.
+            </p>
+            <p>
+                This analysis of 199 movies released in 2024 examines what connects popularity with perception. Do the
+                movies loved by IMDb end up making the most money? Or does success follow a different path?
+            </p>
+            <p>Here’s the year, week by week.</p>
+        </section>
+
+        <!-- revenue chart -->
+        <section id="revenue-section">
+            <div id="chart-revenue"></div>
+        </section>
+
+        <!-- revenue chart text -->
+        <section class="centered-paragraph">
+            <p>
+                As the year got closer to the holiday season (and awards season), the releases increase. In the second
+                half of 2024, <strong>more than 70% of the movies were released, earning a combined $10.5
+                    billion.</strong>
+            </p>
+            <p>Let’s compare both categories.</p>
+        </section>
+
+        <!-- top 10 charts -->
+        <section id="top10-section">
+            <div id="top10-charts" style="display: flex; gap: 40px; justify-content: center;">
+                <div id="top-revenue-chart"></div>
+                <div id="top-score-chart"></div>
+            </div>
+
+            <div class="spacer"></div>
+            <section class="centered-paragraph">
+                <p>There's not a lot of similarities between both charts, but it's worth mentioning that most of the
+                    movies with higher scores have low number of reviews due to their niche (<em>Attack on Titan</em>
+                    and <em>Solo Leveling</em> have less
+                    than 12,000 and 5,000, respectively). </p>
+                <p>Other movies that are very well reviewed are not American: <em>Maharaja</em> and <em>Amaran</em>, for
+                    example, are from
+                    India, and both, while having very successful home releases, didn't feature heavily in US theaters,
+                    limiting the average IMDb reviewer's exposure to them. </p>
+            </section>
+
+            <!-- genre segue -->
+
+            <section class="centered-paragraph">
+                <p>What about genres?</p>
+            </section>
+
+            <!-- genre chart -->
+            <section id="genre-section">
+                <div id="chart-genres"></div>
+                <div class="tooltipGenre" id="genreTooltip"></div>
+                <div id="toggle-buttons">
+                    <button data-metric="movies" class="active">🎬 Movies</button>
+                    <button data-metric="revenue">💰 Revenue</button>
+                    <button data-metric="rating">⭐ Ratings</button>
+                </div>
+            </section>
+
+            <!-- quiz intro -->
+            <section class="centered-paragraph">
+                <p>Here are some clear differences: while most movies released had the <strong>Drama</strong> tag, 9/10 of the
+                    biggest blockbusters of the year (all but <em>Wicked</em>) were <strong>Adventure</strong> movies.</p>
+                <p>Finally, a quiz! Can you guess which movie received a higher average rating on IMDb?</p>
+            </section>
+
+            <!-- quiz -->
+            <section id="quiz-section">
+                <div class="quiz-container">
+                    <div class="movie-card" id="movie-left" data-side="left">
+                        <img src="" alt="Movie Poster">
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Movie Title</h3>
+                            <p class="movie-revenue">$123M</p>
+                        </div>
+                    </div>
+
+                    <div class="movie-card" id="movie-right" data-side="right">
+                        <img src="" alt="Movie Poster">
+                        <div class="movie-overlay">
+                            <h3 class="movie-title">Movie Title</h3>
+                            <p class="movie-revenue">$123M</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quiz-result hidden"></div>
+                <button class="quiz-retry hidden">Try Another Pair</button>
+            </section>
+
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
 
     </main>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="script.js"></script>
-
-    <section id="timeline-section">
-        <div id="chart-timeline"></div>
-        <div class="spacer"></div>
-        <div class="centered-paragraph">
-            <p>
-
-
-                Database with of 199 movies released in theaters in 2024. This timeline visualizes the shifts in
-                releases, which increases as the year reaches awards season.
-            </p>
-        </div>
-
-        </div>
-
-    </section>
-
-    <section id="revenue-section">
-        <div id="chart-revenue"></div>
-        <div class="spacer"></div>
-        <div class="centered-paragraph">
-            <p>
-                This chart stacks each week’s movies by revenue, with the highest-grossing films on top. It highlights
-                the commercial peaks and box office failures.
-            </p>
-        </div>
-    </section>
-
-
 </body>
 
 </html>

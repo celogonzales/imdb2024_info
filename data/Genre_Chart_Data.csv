@@ -1,0 +1,8 @@
+Genre,Movie_Count,Total_Revenue,Average_Rating,Color
+Drama,85,6747252900,6.51,color-yellow
+Thriller,80,5195590300,5.97,color-coral
+Action,60,7440918700,6.32,color-green
+Comedy,47,8466960400,6.42,color-blue
+Horror,45,2401620200,5.78,color-purple
+Adventure,33,11573807300,6.5,color-orange
+Sci-Fi,24,6731098200,6.29,color-gray

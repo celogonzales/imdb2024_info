@@ -54,7 +54,7 @@ svg.responsive-svg {
 
 /* Tooltip */
 .tooltip {
-  position: fixed;
+  position: absolute;
   background: #333;
   color: #E6E6E6;
   padding: 8px 12px;
@@ -110,4 +110,181 @@ svg.responsive-svg {
   .tooltip {
     font-size: 0.8rem;
   }
+}
+#top-revenue-chart,
+#top-score-chart {
+  width: 400px;
+}
+
+@keyframes flash-yellow {
+  0%, 100% {
+    color: #E6E6E6;
+  }
+  50% {
+    color: #F4B400;
+  }
+}
+
+.flash {
+  animation: flash-yellow 1.5s ease-in-out;
+}
+
+/* tooltip for revenue*/
+
+.tooltipRevenue {
+  position: absolute; /* instead of fixed */
+  background: #333;
+  color: #E6E6E6;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+  max-width: 220px;
+}
+
+
+.responsive-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tooltipGenre {
+  position: absolute; /* instead of fixed */
+  background: #333;
+  color: #E6E6E6;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+  max-width: 220px;
+}
+
+#toggle-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+#toggle-buttons button {
+  background-color: #444;
+  color: #E6E6E6;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+#toggle-buttons button:hover {
+  background-color: #666;
+}
+
+#toggle-buttons button.active {
+  background-color: #F4B400;
+  color: #1E1E1E;
+  font-weight: bold;
+}
+
+#quiz-section {
+  margin-top: 4rem;
+}
+
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  position: relative;
+  width: 200px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.02);
+}
+
+.movie-card img {
+  position:relative;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+.movie-overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  background-color: rgba(30, 30, 30, 0.9); /* dark, 90% */
+  color: #E6E6E6;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  font-family: 'Lato', sans-serif;
+  border-radius: 0 0 8px 8px;
+}
+
+.movie-title {
+  font-weight: 700;
+  margin: 0;
+}
+
+.movie-revenue {
+  font-weight: 400;
+  margin: 0;
+}
+
+.guess-button {
+  margin-top: 8px;
+  width: 100%;
+  padding: 8px;
+  font-family: 'Lato', sans-serif;
+  background-color: #333;
+  color: #E6E6E6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.guess-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.quiz-result {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.quiz-retry {
+  display: block;
+  margin: 1rem auto;
+  padding: 10px 20px;
+  font-family: 'Lato', sans-serif;
+  background-color: #555;
+  color: #E6E6E6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
