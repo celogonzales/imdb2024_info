@@ -213,8 +213,12 @@ svg.responsive-svg {
   transition: transform 0.2s ease;
 }
 
+/* Quiz hover highlight */
 .movie-card:hover {
-  transform: scale(1.02);
+  border: 3px solid #F4B400; /* warm yellow */
+  border-radius: 8px;
+  transform: scale(1.03);    /* keep your existing slight zoom */
+  transition: border 0.15s ease, transform 0.2s ease;
 }
 
 .movie-card img {
@@ -288,3 +292,4 @@ svg.responsive-svg {
 .hidden {
   display: none;
 }
+
