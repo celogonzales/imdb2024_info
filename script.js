@@ -190,11 +190,10 @@ d3.csv("data/imdb_posters.csv").then(data => {
         .attr("style", titleStyle)
         .text(title);
 
-      data.forEach((d, index) => {
-        const rank = String(index + 1).padStart(2, "0");
+      data.forEach(d => {
         const row = container.append("div")
           .attr("style", itemStyle)
-          .html(`<span>${rank}. ${d.Movie_Name}</span><span>${valueFormatter(d)}</span>`);
+          .html(`<span>${d.Movie_Name}</span><span>${valueFormatter(d)}</span>`);
 
         if (d.Movie_Name === "Dune: Part Two") {
           row
