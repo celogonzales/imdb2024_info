@@ -293,3 +293,9 @@ svg.responsive-svg {
   display: none;
 }
 
+.chart-caption {
+  font-size: 0.95rem;
+  color: #B0B0B0;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
