@@ -37,6 +37,25 @@ p {
   margin-bottom: 1.5rem;
 }
 
+/* Section headings & captions */
+.section-heading {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #CCCCCC;
+  margin-top: 0.25rem;
+}
+
+.chart-caption {
+  font-size: 0.95rem;
+  color: #B0B0B0;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
 /* Chart containers */
 #chart-timeline,
 #chart-revenue {
@@ -48,21 +67,45 @@ p {
 }
 
 svg.responsive-svg {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
 /* Tooltip */
 .tooltip {
   position: absolute;
-  background: #333;
+  background-color: rgba(30, 30, 30, 0.95);
   color: #E6E6E6;
-  padding: 8px 12px;
-  border-radius: 4px;
+  padding: 12px 16px;
+  border-radius: 8px;
   font-size: 0.9rem;
   pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.15s ease-out;
+  z-index: 999;
+  max-width: 280px;
+}
+
+.tooltip img {
+  display: block;
+  margin-top: 8px;
+  border-radius: 4px;
+  max-width: 140px;
+}
+
+/* Genre tooltip */
+.tooltipGenre {
+  position: absolute;
+  background-color: rgba(30, 30, 30, 0.95);
+  color: #E6E6E6;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
   z-index: 999;
   max-width: 220px;
 }
@@ -84,191 +127,127 @@ svg.responsive-svg {
   height: 30px;
 }
 
-/* Color palette classes */
+/* Color palette classes (decorative; used to visually differentiate genres only) */
 .color-yellow { fill: #F4B400; }
 .color-coral  { fill: #E57373; }
 .color-green  { fill: #82B29A; }
 .color-blue   { fill: #5FB3CC; }
 .color-purple { fill: #A179DC; }
-.color-orange { fill: #E1A95F; }
-.color-gray   { fill: #DADADA; }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  body {
-    padding: 0 5vw; /* Less margin on smaller screens */
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
-  .tooltip {
-    font-size: 0.8rem;
-  }
-}
-#top-revenue-chart,
-#top-score-chart {
-  width: 400px;
+/* Top-10 shared title highlight */
+.shared-title {
+  color: #F4B400;
+  font-weight: bold;
 }
 
-@keyframes flash-yellow {
-  0%, 100% {
-    color: #E6E6E6;
-  }
-  50% {
-    color: #F4B400;
-  }
+.shared-title.flash {
+  animation: flashHighlight 1s ease-in-out;
 }
 
-.flash {
-  animation: flash-yellow 1.5s ease-in-out;
+@keyframes flashHighlight {
+  0%   { color: #F4B400; }
+  50%  { color: #FFFFFF; }
+  100% { color: #F4B400; }
 }
 
-/* tooltip for revenue*/
-
-.tooltipRevenue {
-  position: absolute; /* instead of fixed */
-  background: #333;
-  color: #E6E6E6;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  z-index: 999;
-  max-width: 220px;
+/* Genre chart layout */
+#genre-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0;
 }
 
-
-.responsive-svg {
+#chart-genres {
   width: 100%;
-  height: auto;
-  display: block;
+  max-width: 800px;
+  margin-bottom: 1.5rem;
 }
 
-.tooltipGenre {
-  position: absolute; /* instead of fixed */
-  background: #333;
-  color: #E6E6E6;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  z-index: 999;
-  max-width: 220px;
-}
-
+/* Toggle buttons */
 #toggle-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 1rem;
+  gap: 1rem;
 }
 
 #toggle-buttons button {
-  background-color: #444;
-  color: #E6E6E6;
-  border: none;
-  padding: 6px 14px;
-  border-radius: 4px;
   font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid #666;
+  background-color: #333;
+  color: #E6E6E6;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background 0.2s ease;
-}
-
-#toggle-buttons button:hover {
-  background-color: #666;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 #toggle-buttons button.active {
   background-color: #F4B400;
   color: #1E1E1E;
-  font-weight: bold;
+  border-color: #F4B400;
 }
 
+/* Quiz styles */
 #quiz-section {
-  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 3rem;
 }
 
 .quiz-container {
   display: flex;
-  justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie-card {
   position: relative;
   width: 200px;
   cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.movie-card:hover {
-  transform: scale(1.02);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #444;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .movie-card img {
-  position:relative;
   width: 100%;
   height: auto;
-  border-radius: 8px;
   display: block;
+}
+
+.movie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  border-color: #F4B400;
 }
 
 .movie-overlay {
   position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
+  bottom: 0;
   width: 100%;
-  background-color: rgba(30, 30, 30, 0.9); /* dark, 90% */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   color: #E6E6E6;
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9rem;
-  font-family: 'Lato', sans-serif;
-  border-radius: 0 0 8px 8px;
+  padding: 12px;
 }
 
 .movie-title {
-  font-weight: 700;
   margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .movie-revenue {
-  font-weight: 400;
-  margin: 0;
-}
-
-.guess-button {
-  margin-top: 8px;
-  width: 100%;
-  padding: 8px;
-  font-family: 'Lato', sans-serif;
-  background-color: #333;
-  color: #E6E6E6;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.guess-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #CCCCCC;
 }
 
 .quiz-result {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   text-align: center;
   font-size: 1.1rem;
 }
