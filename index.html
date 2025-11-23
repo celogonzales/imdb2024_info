@@ -13,14 +13,14 @@
     <main>
 
         <!-- intro -->
-        <section class="centered-paragraph">
-            <h1>From Ratings to Revenue: 2024 in Movies</h1>
-            <p>Do better movies generate more money?</p>
-            <p><strong>Short answer: not exactly—critical favorites and box office giants rarely line up.</strong></p>
-            <p>
-                Every year, hundreds of films are released. Some are box office giants, while others barely earn any
-                money.
-            </p>
+<section class="centered-paragraph">
+    <h1>From Ratings to Revenue: 2024 in Movies</h1>
+    <p>Do better movies generate more money?</p>
+    <p><strong>Not exactly—critical favorites and box office giants rarely line up.</strong></p>
+    <p>
+        Every year, hundreds of films are released. Some are box office giants; others barely earn any
+        money.
+    </p>
             <p>
                 This analysis of 199 movies released in 2024 examines what connects popularity with perception. Do the
                 movies loved by IMDb end up making the most money? Or does success follow a different path?
@@ -28,16 +28,16 @@
             <p>Here’s the year, week by week.</p>
         </section>
 
-        <!-- section heading: release timing -->
-        <section class="centered-paragraph section-heading">
-            <h2>1. When do movies actually come out?</h2>
-            <p class="section-subtitle">Releases across 2024, week by week.</p>
-        </section>
-
         <!-- revenue chart -->
-        <section id="revenue-section">
-            <div id="chart-revenue"></div>
-        </section>
+<section class="centered-paragraph section-heading">
+    <h2>1. When do movies actually come out?</h2>
+    <p class="section-subtitle">Releases across 2024, week by week.</p>
+</section>
+
+<!-- revenue chart -->
+<section id="revenue-section">
+    <div id="chart-revenue"></div>
+</section>
 
         <!-- revenue chart text -->
         <section class="centered-paragraph">
@@ -49,13 +49,10 @@
             </p>
             <p>Let’s compare both categories.</p>
         </section>
-
-        <!-- section heading: top 10 -->
-        <section class="centered-paragraph section-heading">
-            <h2>2. Box office giants vs fan favorites</h2>
-            <p class="section-subtitle">Comparing the top 10 by revenue with the top 10 by IMDb score.</p>
-        </section>
-
+<section class="centered-paragraph section-heading">
+    <h2>2. Box office giants vs fan favorites</h2>
+    <p class="section-subtitle">Comparing the top 10 by revenue with the top 10 by IMDb score.</p>
+</section>
         <!-- top 10 charts -->
         <section id="top10-section">
             <div id="top10-charts" style="display: flex; gap: 40px; justify-content: center;">
@@ -73,16 +70,17 @@
                     example, are from
                     India, and both, while having very successful home releases, didn't feature heavily in US theaters,
                     limiting the average IMDb reviewer's exposure to them. </p>
-                <p><em>Dune: Part Two</em> is a rare overlap: it appears in both top 10 lists and has the highest number
-                    of user ratings in this dataset, making it the most widely rated 2024 release on IMDb.</p>
             </section>
 
             <!-- genre segue -->
-            <section class="centered-paragraph section-heading">
-                <h2>3. Which genres actually win?</h2>
-                <p class="section-subtitle">Counting movies, box office, and IMDb ratings by genre. Colors just help
-                    differentiate genres visually.</p>
-            </section>
+
+<section class="centered-paragraph section-heading">
+    <h2>3. Which genres actually win?</h2>
+    <p class="section-subtitle">
+        Counting movies, box office, and IMDb ratings by genre. Colors only differentiate genres visually—they
+        don’t encode extra values.
+    </p>
+</section>
 
             <!-- genre chart -->
             <section id="genre-section">
@@ -96,14 +94,15 @@
             </section>
 
             <!-- quiz intro -->
-            <section class="centered-paragraph section-heading">
-                <h2>4. Can you guess the winner?</h2>
-                <p class="section-subtitle">While most movies released had the <strong>Drama</strong> tag, 9 out of 10
-                    of the biggest blockbusters of the year (all but <em>Wicked</em>) were <strong>Adventure</strong>
-                    movies.</p>
-                <p>Finally, a quiz! Can you guess which movie received a higher average rating on IMDb?</p>
+            <section class="centered-paragraph">
+                <p>Here are some clear differences: while most movies released had the <strong>Drama</strong> tag, 9/10 of the
+                    biggest blockbusters of the year (all but <em>Wicked</em>) were <strong>Adventure</strong> movies.</p>
             </section>
-
+<section class="centered-paragraph section-heading">
+    <h2>4. Can you guess the winner?</h2>
+    <p class="section-subtitle">Tap a poster to guess which movie has the higher IMDb rating.</p>
+    <p>Finally, a quiz! Can you guess which movie received a higher average rating on IMDb?</p>
+</section>
             <!-- quiz -->
             <section id="quiz-section">
                 <div class="quiz-container">
@@ -131,14 +130,14 @@
             <div class="spacer"></div>
             <div class="spacer"></div>
             <div class="spacer"></div>
-            <div class="centered-paragraph">
-              <p>
-                Dataset from: Kaggle,
-                <a href="https://www.kaggle.com/datasets/sanadalali/imdb-2024-movies-and-tv-shows" target="_blank">
-                  <strong>IMDb 2024 (Movies and TV Shows)</strong>
-                </a>, by Sanad Alali.
-              </p>
-            </div>
+<div class="centered-paragraph">
+  <p>
+    Dataset from: Kaggle, 
+    <a href="https://www.kaggle.com/datasets/sanadalali/imdb-2024-movies-and-tv-shows" target="_blank">
+      <strong>IMDb 2024 (Movies and TV Shows)</strong>
+    </a>, by Sanad Alali.
+  </p>
+</div>
     </main>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
